@@ -16,7 +16,7 @@ $.get("https://9a2374a7-f18c-4c4e-aaa7-576c4e20a684.mock.pstmn.io/more-cupcakes"
 
         displayCupcakes(data);
 
-        //add data to the local varaiblee
+        //add data to the local varaible
         cupcakesCollection = data;
     }, "json").fail(function(){
         $("#cupcakes").empty().append("<div>There was an error in your request</div>");
@@ -86,7 +86,7 @@ function displayCupcakes(data){
     $("#cupcakes").html(string);
 
     }
-}
+};
 
 // helper function for displaying the filtered results - called on change of select drop down
 // this looks at the JSON of our collection, specifically each cupcake's value attribute, to return only the cupcakes whose tag list includes the correct tags for that category of cupcakes (when you choose chocolate, you will see all of the cupcakes that have a tag of chocolate in their tags property)
@@ -107,7 +107,7 @@ $("#filter").change(function (){
     }else{
         // store the cupcake objects with that tag to a new variable, this is the collection we'll display to the screen
        // TO DO
-       let filterCupcakes = cupcakesCollection.filter((cupcake) => cupcakesCollection.tags.includes(tags));
+       let filterCupcakes = cupcakesCollection.filter((cupcake) => cupcake.tags.includes(tag));
        console.log(filterCupcakes);
 
         // display the filtered array to the screen
